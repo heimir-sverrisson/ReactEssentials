@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>thenewboston</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div id="content"></div>
+    <script type="text/jsx">
+      var HeimisComponent = React.createClass({
+        doSomething: function() {
+          alert("Textinn er: " + this.props.children);
+        },
+        render: function(){
+          return(
+            <div>
+              <h3>{this.props.user}</h3>
+              <a onClick={this.doSomething} href="#" >Smella</a>
+            </div>
+          )
+        }
+      });
+      React.render(
+        <div>
+          <HeimisComponent user="Heimir Þór">Skemmtilegt</HeimisComponent>
+          <HeimisComponent user="Guðmundur">Líka skemmtilegt</HeimisComponent>
+        </div>,
+        document.getElementById('content')
+      );
+    </script>
+  </body>
+</html>
